@@ -10,7 +10,7 @@ function selectMode(mode) {
     currentMode = mode;
     let modeText = (mode === 'multiplayer') ? 'Multiplayer' : 'AI Mode';
     document.getElementById('selected-mode').textContent = 'Selected Mode: ' + modeText;
-    
+
     // Reset the game when a new mode is selected
     resetGame();
 }
@@ -78,4 +78,5 @@ function resetGame() {
     ];
     currentPlayer = 'X';
     document.querySelectorAll('.cell').forEach(cell => cell.textContent = '');
+    document.getElementById('selected-mode').textContent = 'Selected Mode: None'; // Reset the selected mode display
 }
