@@ -13,6 +13,20 @@ h1 {
 
 .mode-selection {
   margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+#selected-mode {
+  margin-left: 20px;
+  padding: 5px 15px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #333;
+  border: 1px solid #ccc;
 }
 
 #difficulty-selection {
@@ -68,10 +82,17 @@ button {
   color: white;
   border: none;
   border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
   background-color: #555;
+  transform: scale(1.05); 
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 #notification {
