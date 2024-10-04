@@ -37,6 +37,13 @@ h1 {
   display: none;
 }
 
+.game-status {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+}
+
 .game-board {
   display: inline-block;
   margin-top: 20px;
@@ -87,7 +94,7 @@ button {
 
 button:hover {
   background-color: #555;
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 button:focus {

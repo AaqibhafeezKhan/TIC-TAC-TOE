@@ -20,6 +20,7 @@ const oWins = document.getElementById("o-wins");
 const ties = document.getElementById("ties");
 const notification = document.getElementById("notification");
 const modeDisplay = document.getElementById("selected-mode");
+const gameStatus = document.getElementById("game-status"); // Game status prompt
 
 document.getElementById("restart-btn").addEventListener('click', restartGame);
 document.getElementById("multiplayer-btn").addEventListener('click', () => setMode(false));
@@ -54,6 +55,7 @@ function playMove(index, player) {
         endGame(player);
     } else if (board.includes("")) {
         currentPlayer = currentPlayer === "X" ? "O" : "X";
+        gameStatus.textContent = `Next turn: Player ${currentPlayer}`; // Update game status
     } else {
         endGame(null);
     }
@@ -67,20 +69,13 @@ function checkWin(player) {
 
 function endGame(winner) {
     gameActive = false;
-    const message = winner ? `Player ${winner} wins!` : `It's a tie!`;
-    showNotification(message);
-
     if (winner) {
+        gameStatus.textContent = `Player ${winner} wins!`; // Show winner
         winner === "X" ? xWins.textContent++ : oWins.textContent++;
     } else {
+        gameStatus.textContent = `It's a tie!`; // Show tie
         ties.textContent++;
     }
-}
-
-function showNotification(message) {
-    notification.textContent = message;
-    notification.classList.remove('hidden');
-    setTimeout(() => notification.classList.add('hidden'), 2000);
 }
 
 function restartGame() {
@@ -91,6 +86,7 @@ function restartGame() {
         cell.textContent = "";
         delete cell.dataset.player;
     });
+    gameStatus.textContent = `Next turn: Player X`; // Reset game status
     showNotification('Game restarted!');
 }
 
