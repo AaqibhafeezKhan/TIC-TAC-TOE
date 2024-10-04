@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="tic-tac-toe.css">
+</head>
+<body>
+  <h1>Tic-Tac-Toe</h1>
+  
+  <div class="mode-selection">
+    <button id="multiplayer-btn">Multiplayer Mode</button>
+    <button id="ai-btn">AI Mode</button>
+    <div id="difficulty-selection">
+      <label for="difficulty">Select AI Difficulty: </label>
+      <select id="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="game-board">
+    <div class="row">
+      <div class="cell" id="cell-0"></div>
+      <div class="cell" id="cell-1"></div>
+      <div class="cell" id="cell-2"></div>
+    </div>
+    <div class="row">
+      <div class="cell" id="cell-3"></div>
+      <div class="cell" id="cell-4"></div>
+      <div class="cell" id="cell-5"></div>
+    </div>
+    <div class="row">
+      <div class="cell" id="cell-6"></div>
+      <div class="cell" id="cell-7"></div>
+      <div class="cell" id="cell-8"></div>
+    </div>
+  </div>
+
+  <div class="score-board">
+    <p>Player X Wins: <span id="x-wins">0</span></p>
+    <p>Player O Wins: <span id="o-wins">0</span></p>
+    <p>Ties: <span id="ties">0</span></p>
+  </div>
+
+  <button id="restart-btn">Restart Game</button>
+
+  <script src="tic-tac-toe.js"></script>
+</body>
+</html>
