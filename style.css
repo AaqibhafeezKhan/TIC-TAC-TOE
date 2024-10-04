@@ -1,14 +1,27 @@
-body {
-  font-family: 'Arial', sans-serif;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+* {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
   margin: 20px;
-  color: #333;
+  font-size: 3rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .mode-selection {
@@ -22,15 +35,16 @@ h1 {
 #selected-mode {
   margin-left: 20px;
   padding: 5px 15px;
-  background-color: #f0f0f0;
-  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   font-weight: bold;
-  color: #333;
-  border: 1px solid #ccc;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 #difficulty-selection {
   margin-top: 10px;
+  color: white;
 }
 
 .hidden {
@@ -39,9 +53,10 @@ h1 {
 
 .game-status {
   margin-top: 20px;
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 1.8rem;
+  color: #fff;
   font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .game-board {
@@ -56,59 +71,126 @@ h1 {
 .cell {
   width: 100px;
   height: 100px;
-  border: 2px solid #333;
+  border: 3px solid #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .cell:hover {
-  background-color: #ececec;
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .cell[data-player="X"] {
   color: #ff4d4d;
+  text-shadow: 2px 2px 8px rgba(255, 77, 77, 0.5);
 }
 
 .cell[data-player="O"] {
   color: #4da6ff;
+  text-shadow: 2px 2px 8px rgba(77, 166, 255, 0.5);
 }
 
 .score-board {
-  margin-top: 20px;
+  margin-top: 30px;
+  color: white;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   margin: 10px;
+  font-size: 1.2rem;
   cursor: pointer;
-  background-color: #333;
+  background-color: rgba(255, 255, 255, 0.2);
   color: white;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 2px solid white;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-  background-color: #555;
-  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 button:focus {
   outline: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 #notification {
   margin-top: 20px;
-  color: #333;
+  color: white;
   font-weight: bold;
-  transition: opacity 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#notification:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #notification.hidden {
   opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .game-status {
+    font-size: 1.5rem;
+  }
+  
+  .game-board {
+    margin-top: 20px;
+  }
+
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .game-status {
+    font-size: 1.3rem;
+  }
+
+  .cell {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
 }
