@@ -8,11 +8,11 @@
 </head>
 <body>
   <h1>Tic-Tac-Toe</h1>
-  
+
   <div class="mode-selection">
     <button id="multiplayer-btn">Multiplayer Mode</button>
     <button id="ai-btn">AI Mode</button>
-    <div id="difficulty-selection">
+    <div id="difficulty-selection" class="hidden">
       <label for="difficulty">Select AI Difficulty: </label>
       <select id="difficulty">
         <option value="easy">Easy</option>
@@ -24,19 +24,19 @@
 
   <div class="game-board">
     <div class="row">
-      <div class="cell" id="cell-0"></div>
-      <div class="cell" id="cell-1"></div>
-      <div class="cell" id="cell-2"></div>
+      <div class="cell" id="cell-0" tabindex="0"></div>
+      <div class="cell" id="cell-1" tabindex="0"></div>
+      <div class="cell" id="cell-2" tabindex="0"></div>
     </div>
     <div class="row">
-      <div class="cell" id="cell-3"></div>
-      <div class="cell" id="cell-4"></div>
-      <div class="cell" id="cell-5"></div>
+      <div class="cell" id="cell-3" tabindex="0"></div>
+      <div class="cell" id="cell-4" tabindex="0"></div>
+      <div class="cell" id="cell-5" tabindex="0"></div>
     </div>
     <div class="row">
-      <div class="cell" id="cell-6"></div>
-      <div class="cell" id="cell-7"></div>
-      <div class="cell" id="cell-8"></div>
+      <div class="cell" id="cell-6" tabindex="0"></div>
+      <div class="cell" id="cell-7" tabindex="0"></div>
+      <div class="cell" id="cell-8" tabindex="0"></div>
     </div>
   </div>
 
@@ -47,6 +47,8 @@
   </div>
 
   <button id="restart-btn">Restart Game</button>
+
+  <div id="notification" class="hidden"></div>
 
   <script src="script.js"></script>
 </body>

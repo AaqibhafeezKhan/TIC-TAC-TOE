@@ -8,10 +8,19 @@ body {
 
 h1 {
   margin: 20px;
+  color: #333;
 }
 
 .mode-selection {
   margin: 20px;
+}
+
+#difficulty-selection {
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
 }
 
 .game-board {
@@ -32,10 +41,19 @@ h1 {
   justify-content: center;
   font-size: 2rem;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cell:hover {
   background-color: #ececec;
+}
+
+.cell[data-player="X"] {
+  color: #ff4d4d;
+}
+
+.cell[data-player="O"] {
+  color: #4da6ff;
 }
 
 .score-board {
@@ -54,4 +72,15 @@ button {
 
 button:hover {
   background-color: #555;
+}
+
+#notification {
+  margin-top: 20px;
+  color: #333;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+#notification.hidden {
+  opacity: 0;
 }
