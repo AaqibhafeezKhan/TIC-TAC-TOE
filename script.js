@@ -1,8 +1,8 @@
 let board = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = "X";
 let gameActive = true;
-let aiMode = false;
-let aiDifficulty = "easy";
+let computerMode = false;
+let computerDifficulty = "easy";
 const winningConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -24,15 +24,15 @@ const gameStatus = document.getElementById("game-status"); // Game status prompt
 
 document.getElementById("restart-btn").addEventListener('click', restartGame);
 document.getElementById("multiplayer-btn").addEventListener('click', () => setMode(false));
-document.getElementById("ai-btn").addEventListener('click', () => setMode(true));
-document.getElementById("difficulty").addEventListener('change', (e) => aiDifficulty = e.target.value);
+document.getElementById("computer-btn").addEventListener('click', () => setMode(true));
+document.getElementById("difficulty").addEventListener('change', (e) => computerDifficulty = e.target.value);
 
 cells.forEach(cell => cell.addEventListener('click', handleCellClick));
 
-function setMode(isAiMode) {
-    aiMode = isAiMode;
-    document.getElementById('difficulty-selection').classList.toggle('hidden', !aiMode);
-    modeDisplay.textContent = isAiMode ? 'AI Mode' : 'Multiplayer Mode'; // Update mode display
+function setMode(isComputerMode) {
+    computerMode = isComputerMode;
+    document.getElementById('difficulty-selection').classList.toggle('hidden', !computerMode);
+    modeDisplay.textContent = isComputerMode ? 'Computer Mode' : 'Multiplayer Mode'; // Update mode display
     restartGame();
 }
 
@@ -42,7 +42,7 @@ function handleCellClick(event) {
 
     playMove(index, currentPlayer);
 
-    if (aiMode && gameActive) setTimeout(aiPlay, 500); // AI move delay
+    if (computerMode && gameActive) setTimeout(computerPlay, 500); // Computer move delay
 }
 
 function playMove(index, player) {
@@ -90,8 +90,8 @@ function restartGame() {
     showNotification('Game restarted!');
 }
 
-function aiPlay() {
-    const bestMove = aiDifficulty === 'easy' ? randomMove() : minimaxMove();
+function computerPlay() {
+    const bestMove = computerDifficulty === 'easy' ? randomMove() : minimaxMove();
     playMove(bestMove, "O");
 }
 
