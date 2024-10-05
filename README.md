@@ -23,7 +23,7 @@ This is a browser-based Tic-Tac-Toe game with two modes: Multiplayer and AI. The
 3. Start playing!
 
 ## Technologies Used:
-HTML5 for the game layout.
-CSS3 for responsive design and styling.
+HTML5 for the game layout.  
+CSS3 for responsive design and styling.  
 JavaScript for game logic and AI implementation.
 
