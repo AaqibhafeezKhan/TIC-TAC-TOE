@@ -13,7 +13,7 @@ This is a browser-based Tic-Tac-Toe game with two modes: Multiplayer and AI. The
 
 ## How to Play:
 1. Select either Multiplayer Mode or AI Mode.
-2. In AI Mode, choose the difficulty level (Easy, Medium, Hard).
+2. In AI Mode, choose the difficulty level (Easy, Medium, Hard). **Minimax algorithm used for difficulty levels**
 3. Click on a cell to make a move. If you're playing in AI Mode, the AI will automatically take its turn after yours.
 4. Track your score at the bottom of the game screen.
 
