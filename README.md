@@ -1,5 +1,5 @@
 # TIC-TAC-TOE
- This is a browser-based Tic-Tac-Toe game built using HTML, CSS, and JavaScript. It features both Multiplayer and AI modes, with the Computer difficulty configurable across three levels: Easy, Medium, and Hard.
+ This is a browser-based Tic-Tac-Toe game built using HTML, CSS, and JavaScript. It features both Multiplayer and Computer modes, with the Computer difficulty configurable across three levels: Easy, Medium, and Hard.
 
 ## Features  
 **Multiplayer Mode**: Two players can play on the same device.  
@@ -11,10 +11,10 @@ Hard (implemented using the Minimax algorithm)
 **Responsive Design**: The game is fully responsive and works seamlessly across desktop and mobile devices.  
 
 ## How to Play
-**Select a Mode**: Choose between Multiplayer or AI Mode.
-**Choose Difficulty**: In AI Mode, select the difficulty level from the dropdown (Easy, Medium, Hard).
-**Take Turns**: Click on any cell to place your marker. If you're in AI Mode, the AI will automatically play its turn after yours.
-**Track the Score**: Wins, losses, and ties are tracked and displayed below the game board.
+**Select a Mode**: Choose between Multiplayer or Computer Mode.  
+**Choose Difficulty**: In Computer Mode, select the difficulty level from the dropdown (Easy, Medium, Hard).  
+**Take Turns**: Click on any cell to place your marker. If you're in Computer Mode, the Computer will automatically play its turn after yours.  
+**Track the Score**: Wins, losses, and ties are tracked and displayed below the game board.  
 
 ## Installation and Setup 
 Clone the Repository:
@@ -35,7 +35,7 @@ TIC-TAC-TOE/
 │
 ├── index.html         # Main HTML file
 ├── style.css          # Game styles and responsive design
-├── script.js          # Game logic and AI functionality
+├── script.js          # Game logic and Computer functionality
 ├── README.md          # Project information
 
 ## Technologies Used
@@ -43,8 +43,8 @@ TIC-TAC-TOE/
 **CSS3**: Responsive design and styling.
 **JavaScript**: Game logic, score tracking, and Computer play mode implementation.
 **Computer mode Implementation**
-The Computer mode in this Tic-Tac-Toe game uses the Minimax Algorithm in the "Hard" difficulty mode. This algorithm ensures that the AI makes optimal moves to either win or force a draw.
-For the Easy mode, the AI selects a random move. In Medium mode, it mixes optimal and random moves to provide a more human-like challenge.
+The Computer mode in this Tic-Tac-Toe game uses the Minimax Algorithm in the "Hard" difficulty mode. This algorithm ensures that the Computer makes optimal moves to either win or force a draw.
+For the Easy mode, the Computer selects a random move. In Medium mode, it mixes optimal and random moves to provide a more human-like challenge.
 
 ## Future Improvements  
 Add animations and sound effects for a more engaging experience.  
