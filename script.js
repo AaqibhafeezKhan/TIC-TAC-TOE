@@ -1,4 +1,4 @@
-let board = ["", "", "", "", "", "", "", "", ""];
+let board = Array(9).fill("");
 let currentPlayer = "X";
 let gameActive = true;
 let aiMode = false;
@@ -14,48 +14,45 @@ const winningConditions = [
     [2, 4, 6]
 ];
 
-const cells = document.querySelectorAll('.cell');
+const cells = Array.from(document.querySelectorAll('.cell'));
 const xWins = document.getElementById("x-wins");
 const oWins = document.getElementById("o-wins");
 const ties = document.getElementById("ties");
 const notification = document.getElementById("notification");
 const modeDisplay = document.getElementById("selected-mode");
-const gameStatus = document.getElementById("game-status"); // Game status prompt
+const gameStatus = document.getElementById("game-status");
 
 document.getElementById("restart-btn").addEventListener('click', restartGame);
 document.getElementById("multiplayer-btn").addEventListener('click', () => setMode(false));
 document.getElementById("ai-btn").addEventListener('click', () => setMode(true));
 document.getElementById("difficulty").addEventListener('change', (e) => aiDifficulty = e.target.value);
 
-cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+cells.forEach((cell, index) => cell.addEventListener('click', () => handleCellClick(index)));
 
 function setMode(isAiMode) {
     aiMode = isAiMode;
     document.getElementById('difficulty-selection').classList.toggle('hidden', !aiMode);
-    modeDisplay.textContent = isAiMode ? 'Computer Mode' : 'Multiplayer Mode'; // Update mode display
+    modeDisplay.textContent = isAiMode ? 'Computer Mode' : 'Multiplayer Mode';
     restartGame();
 }
 
-function handleCellClick(event) {
-    const index = +event.target.id.split('-')[1];
+function handleCellClick(index) {
     if (board[index] !== "" || !gameActive) return;
 
     playMove(index, currentPlayer);
-
-    if (aiMode && gameActive) setTimeout(aiPlay, 500); // Computer move delay
+    if (aiMode && gameActive) setTimeout(aiPlay, 500);
 }
 
 function playMove(index, player) {
     board[index] = player;
-    const cell = document.getElementById(`cell-${index}`);
-    cell.textContent = player;
-    cell.dataset.player = player;
+    cells[index].textContent = player;
+    cells[index].dataset.player = player;
 
     if (checkWin(player)) {
         endGame(player);
     } else if (board.includes("")) {
         currentPlayer = currentPlayer === "X" ? "O" : "X";
-        gameStatus.textContent = `Next turn: Player ${currentPlayer}`; // Update game status
+        gameStatus.textContent = `Next turn: Player ${currentPlayer}`;
     } else {
         endGame(null);
     }
@@ -69,24 +66,23 @@ function checkWin(player) {
 
 function endGame(winner) {
     gameActive = false;
+    gameStatus.textContent = winner ? `Player ${winner} wins!` : `It's a tie!`;
     if (winner) {
-        gameStatus.textContent = `Player ${winner} wins!`; // Show winner
         winner === "X" ? xWins.textContent++ : oWins.textContent++;
     } else {
-        gameStatus.textContent = `It's a tie!`; // Show tie
         ties.textContent++;
     }
 }
 
 function restartGame() {
-    board = ["", "", "", "", "", "", "", "", ""];
+    board.fill("");
     gameActive = true;
     currentPlayer = "X";
     cells.forEach(cell => {
         cell.textContent = "";
         delete cell.dataset.player;
     });
-    gameStatus.textContent = `Next turn: Player X`; // Reset game status
+    gameStatus.textContent = `Next turn: Player X`;
     showNotification('Game restarted!');
 }
 
@@ -105,7 +101,6 @@ function randomMove() {
 function minimaxMove() {
     let bestMove = -1;
     let bestValue = -Infinity;
-
     board.forEach((cell, index) => {
         if (cell === "") {
             board[index] = "O";
@@ -125,27 +120,16 @@ function minimax(newBoard, depth, isMaximizing) {
     if (winner) return winner === "O" ? 10 - depth : depth - 10;
     if (!newBoard.includes("")) return 0;
 
-    if (isMaximizing) {
-        let bestValue = -Infinity;
-        newBoard.forEach((cell, index) => {
-            if (cell === "") {
-                newBoard[index] = "O";
-                const value = minimax(newBoard, depth + 1, false);
-                newBoard[index] = "";
-                bestValue = Math.max(value, bestValue);
-            }
-        });
-        return bestValue;
-    } else {
-        let bestValue = Infinity;
-        newBoard.forEach((cell, index) => {
-            if (cell === "") {
-                newBoard[index] = "X";
-                const value = minimax(newBoard, depth + 1, true);
-                newBoard[index] = "";
-                bestValue = Math.min(value, bestValue);
-            }
-        });
-        return bestValue;
-    }
+    let bestValue = isMaximizing ? -Infinity : Infinity;
+    newBoard.forEach((cell, index) => {
+        if (cell === "") {
+            newBoard[index] = isMaximizing ? "O" : "X";
+            const value = minimax(newBoard, depth + 1, !isMaximizing);
+            newBoard[index] = "";
+            bestValue = isMaximizing
+                ? Math.max(value, bestValue)
+                : Math.min(value, bestValue);
+        }
+    });
+    return bestValue;
 }
