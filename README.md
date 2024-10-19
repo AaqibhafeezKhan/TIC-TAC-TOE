@@ -1,4 +1,5 @@
-# This is a browser-based Tic-Tac-Toe game built using HTML, CSS, and JavaScript. It features both Multiplayer and AI modes, with the Computer difficulty configurable across three levels: Easy, Medium, and Hard.
+# TIC-TAC-TOE
+ This is a browser-based Tic-Tac-Toe game built using HTML, CSS, and JavaScript. It features both Multiplayer and AI modes, with the Computer difficulty configurable across three levels: Easy, Medium, and Hard.
 
 ## Features  
 **Multiplayer Mode**: Two players can play on the same device.  
