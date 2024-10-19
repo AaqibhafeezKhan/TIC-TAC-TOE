@@ -3,19 +3,20 @@
 
 ## Features  
 **Multiplayer Mode**: Two players can play on the same device.  
-**AI Mode**: Play against the computer with three difficulty levels:  
+**Computer Mode**: Play against the computer with three difficulty levels:  
 Easy  
 Medium  
 Hard (implemented using the Minimax algorithm)  
-**Score Tracking**: The game tracks wins, losses, and ties for each player. 
+**Score Tracking**: The game tracks wins, losses, and ties for each player.  
 **Responsive Design**: The game is fully responsive and works seamlessly across desktop and mobile devices.  
-How to Play
+
+## How to Play
 **Select a Mode**: Choose between Multiplayer or AI Mode.
 **Choose Difficulty**: In AI Mode, select the difficulty level from the dropdown (Easy, Medium, Hard).
 **Take Turns**: Click on any cell to place your marker. If you're in AI Mode, the AI will automatically play its turn after yours.
 **Track the Score**: Wins, losses, and ties are tracked and displayed below the game board.
 
-Installation and Setup
+## Installation and Setup 
 Clone the Repository:
 
 https://github.com/AaqibhafeezKhan/TIC-TAC-TOE.git
@@ -28,7 +29,7 @@ cd TIC-TAC-TOE
 
 open index.html
 
-Project Structure
+## Project Structure
 
 TIC-TAC-TOE/
 │
@@ -37,7 +38,7 @@ TIC-TAC-TOE/
 ├── script.js          # Game logic and AI functionality
 ├── README.md          # Project information
 
-Technologies Used
+## Technologies Used
 **HTML5**: Structure and layout of the game.
 **CSS3**: Responsive design and styling.
 **JavaScript**: Game logic, score tracking, and Computer play mode implementation.
