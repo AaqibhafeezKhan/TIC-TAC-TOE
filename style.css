@@ -8,43 +8,79 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  text-align: center;
   background: linear-gradient(135deg, #ff9966, #ff5e62);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h1 {
-  margin: 20px;
   font-size: 3rem;
   color: #ffffff;
+  margin: 20px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  animation: zoomIn 1.2s ease-in-out;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .mode-selection {
   margin: 20px;
   display: flex;
+  gap: 15px;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  animation: slideIn 1.2s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 #selected-mode {
-  margin-left: 20px;
   padding: 5px 15px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  font-weight: bold;
   color: #fff;
+  font-weight: bold;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 #difficulty-selection {
   margin-top: 10px;
   color: white;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .hidden {
@@ -57,11 +93,36 @@ h1 {
   color: #fff;
   font-weight: bold;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  animation: bounceIn 1.5s ease-in-out;
+}
+
+@keyframes bounceIn {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
 .game-board {
   display: inline-block;
   margin-top: 20px;
+  animation: popIn 1.5s ease-in-out;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .row {
@@ -85,8 +146,23 @@ h1 {
 }
 
 .cell:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(10deg);
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.cell[data-player="X"], .cell[data-player="O"] {
+  animation: appear 0.5s ease-in-out;
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .cell[data-player="X"] {
@@ -99,11 +175,55 @@ h1 {
   text-shadow: 2px 2px 8px rgba(77, 166, 255, 0.5);
 }
 
+.cell.winning {
+  background-color: rgba(255, 255, 255, 0.7);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+}
+
 .score-board {
   margin-top: 30px;
   color: white;
   font-size: 1.2rem;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.score-board p {
+  transition: transform 0.3s ease;
+}
+
+.score-board p span {
+  display: inline-block;
+}
+
+.score-board p span:active {
+  animation: scaleUp 0.5s ease;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 button {
@@ -115,7 +235,7 @@ button {
   color: white;
   border: 2px solid white;
   border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -128,6 +248,10 @@ button:hover {
 button:focus {
   outline: none;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+button:active {
+  animation: scaleUp 0.5s ease;
 }
 
 #notification {
@@ -153,13 +277,9 @@ button:focus {
   h1 {
     font-size: 2.5rem;
   }
-  
+
   .game-status {
     font-size: 1.5rem;
-  }
-  
-  .game-board {
-    margin-top: 20px;
   }
 
   .cell {
