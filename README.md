@@ -39,10 +39,10 @@ TIC-TAC-TOE/
 ├── README.md          # Project information
 
 ## Technologies Used
-**HTML5**: Structure and layout of the game.
-**CSS3**: Responsive design and styling.
-**JavaScript**: Game logic, score tracking, and Computer play mode implementation.
-**Computer mode Implementation**
+**HTML5**: Structure and layout of the game.  
+**CSS3**: Responsive design and styling.  
+**JavaScript**: Game logic, score tracking, and Computer play mode implementation.  
+**Computer mode Implementation**  
 The Computer mode in this Tic-Tac-Toe game uses the Minimax Algorithm in the "Hard" difficulty mode. This algorithm ensures that the Computer makes optimal moves to either win or force a draw.
 For the Easy mode, the Computer selects a random move. In Medium mode, it mixes optimal and random moves to provide a more human-like challenge.
 
