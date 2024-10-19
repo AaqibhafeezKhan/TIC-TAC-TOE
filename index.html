@@ -3,57 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tic-Tac-Toe</title>
+  <meta name="description" content="Tic-Tac-Toe game by Aaqibhafeez Khan with both multiplayer and AI modes.">
+  <meta name="author" content="Aaqibhafeez Khan">
+  <title>Tic-Tac-Toe by Aaqibhafeez Khan</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Tic-Tac-Toe</h1>
+  <header>
+    <h1>Tic-Tac-Toe</h1>
+  </header>
 
-  <div class="mode-selection">
-    <button id="multiplayer-btn">Multiplayer Mode</button>
-    <button id="ai-btn">Computer Mode</button>
-    <span id="selected-mode">Multiplayer Mode</span> <!-- Mode display -->
-    <div id="difficulty-selection" class="hidden">
-      <label for="difficulty">Select Computer Difficulty: </label>
-      <select id="difficulty">
-        <option value="easy">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
-      </select>
-    </div>
-  </div>
+  <main>
+    <section aria-labelledby="game-mode-section">
+      <h2 id="game-mode-section" class="visually-hidden">Game Mode Selection</h2>
+      <div class="mode-selection">
+        <button id="multiplayer-btn" aria-pressed="true">Multiplayer Mode</button>
+        <button id="ai-btn" aria-pressed="false">Computer Mode</button>
+        <span id="selected-mode" aria-live="polite">Multiplayer Mode</span>
+        <div id="difficulty-selection" class="hidden">
+          <label for="difficulty">Select Computer Difficulty:</label>
+          <select id="difficulty" aria-label="Select Difficulty Level">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+      </div>
+    </section>
 
-  <!-- Game status prompt -->
-  <div id="game-status" class="game-status">Next turn: Player X</div>
+    <section aria-labelledby="game-status-section">
+      <h2 id="game-status-section" class="visually-hidden">Game Status</h2>
+      <!-- Game status prompt -->
+      <div id="game-status" class="game-status" aria-live="polite">Next turn: Player X</div>
+    </section>
 
-  <div class="game-board">
-    <div class="row">
-      <div class="cell" id="cell-0"></div>
-      <div class="cell" id="cell-1"></div>
-      <div class="cell" id="cell-2"></div>
-    </div>
-    <div class="row">
-      <div class="cell" id="cell-3"></div>
-      <div class="cell" id="cell-4"></div>
-      <div class="cell" id="cell-5"></div>
-    </div>
-    <div class="row">
-      <div class="cell" id="cell-6"></div>
-      <div class="cell" id="cell-7"></div>
-      <div class="cell" id="cell-8"></div>
-    </div>
-  </div>
+    <section aria-labelledby="game-board-section">
+      <h2 id="game-board-section" class="visually-hidden">Game Board</h2>
+      <div class="game-board" role="grid" aria-label="Tic-Tac-Toe game board">
+        <div class="row" role="row">
+          <div class="cell" id="cell-0" role="gridcell" aria-label="Cell 1 of 9" tabindex="0"></div>
+          <div class="cell" id="cell-1" role="gridcell" aria-label="Cell 2 of 9" tabindex="0"></div>
+          <div class="cell" id="cell-2" role="gridcell" aria-label="Cell 3 of 9" tabindex="0"></div>
+        </div>
+        <div class="row" role="row">
+          <div class="cell" id="cell-3" role="gridcell" aria-label="Cell 4 of 9" tabindex="0"></div>
+          <div class="cell" id="cell-4" role="gridcell" aria-label="Cell 5 of 9" tabindex="0"></div>
+          <div class="cell" id="cell-5" role="gridcell" aria-label="Cell 6 of 9" tabindex="0"></div>
+        </div>
+        <div class="row" role="row">
+          <div class="cell" id="cell-6" role="gridcell" aria-label="Cell 7 of 9" tabindex="0"></div>
+          <div class="cell" id="cell-7" role="gridcell" aria-label="Cell 8 of 9" tabindex="0"></div>
+          <div class="cell" id="cell-8" role="gridcell" aria-label="Cell 9 of 9" tabindex="0"></div>
+        </div>
+      </div>
+    </section>
 
-  <div class="score-board">
-    <p>Player X Wins: <span id="x-wins">0</span></p>
-    <p>Player O Wins: <span id="o-wins">0</span></p>
-    <p>Ties: <span id="ties">0</span></p>
-  </div>
+    <section aria-labelledby="score-board-section">
+      <h2 id="score-board-section" class="visually-hidden">Score Board</h2>
+      <div class="score-board" role="status" aria-live="polite">
+        <p>Player X Wins: <span id="x-wins">0</span></p>
+        <p>Player O Wins: <span id="o-wins">0</span></p>
+        <p>Ties: <span id="ties">0</span></p>
+      </div>
+    </section>
 
-  <button id="restart-btn">Restart Game</button>
+    <section aria-labelledby="restart-section">
+      <h2 id="restart-section" class="visually-hidden">Game Controls</h2>
+      <button id="restart-btn">Restart Game</button>
+      <div id="notification" class="hidden" aria-live="polite"></div>
+    </section>
+  </main>
 
-  <div id="notification" class="hidden"></div>
+  <footer>
+    <p>&copy; 2024 Aaqibhafeez Khan</p>
+  </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
