@@ -1,29 +1,51 @@
-# Tic-Tac-Toe Game
+# This is a browser-based Tic-Tac-Toe game built using HTML, CSS, and JavaScript. It features both Multiplayer and AI modes, with the Computer difficulty configurable across three levels: Easy, Medium, and Hard.
 
-This is a browser-based Tic-Tac-Toe game with two modes: Multiplayer and AI. The AI mode includes three difficulty levels, while the multiplayer mode allows two users to play on the same device.
+## Features  
+**Multiplayer Mode**: Two players can play on the same device.  
+**AI Mode**: Play against the computer with three difficulty levels:  
+Easy  
+Medium  
+Hard (implemented using the Minimax algorithm)  
+**Score Tracking**: The game tracks wins, losses, and ties for each player. 
+**Responsive Design**: The game is fully responsive and works seamlessly across desktop and mobile devices.  
+How to Play
+**Select a Mode**: Choose between Multiplayer or AI Mode.
+**Choose Difficulty**: In AI Mode, select the difficulty level from the dropdown (Easy, Medium, Hard).
+**Take Turns**: Click on any cell to place your marker. If you're in AI Mode, the AI will automatically play its turn after yours.
+**Track the Score**: Wins, losses, and ties are tracked and displayed below the game board.
 
-## Features:
-- **Multiplayer Mode**: Two players can play on the same device.
-- **Computer Mode**: Play against an AI opponent with three difficulty levels:
-  - Easy
-  - Medium
-  - Hard
-- **Score Tracking**: Displays the number of wins, losses, and ties.
-- **Responsive Design**: Works on both desktop and mobile devices.
+Installation and Setup
+Clone the Repository:
 
-## How to Play:
-1. Select either Multiplayer Mode or AI Mode.
-2. In AI Mode, choose the difficulty level (Easy, Medium, Hard). **Minimax algorithm used for difficulty levels**
-3. Click on a cell to make a move. If you're playing in AI Mode, the AI will automatically take its turn after yours.
-4. Track your score at the bottom of the game screen.
+https://github.com/AaqibhafeezKhan/TIC-TAC-TOE.git
 
-## How to Run:
-1. Download the TIC-TAC-TOE Folder
-2. Open the index.html file in your browser.
-3. Start playing!
+Navigate to the Folder:
 
-## Technologies Used:
-HTML5 for the game layout.  
-CSS3 for responsive design and styling.  
-JavaScript for game logic and AI implementation.
+cd TIC-TAC-TOE
 
+**Open the Game**: Open index.html in any modern browser:
+
+open index.html
+
+Project Structure
+
+TIC-TAC-TOE/
+│
+├── index.html         # Main HTML file
+├── style.css          # Game styles and responsive design
+├── script.js          # Game logic and AI functionality
+├── README.md          # Project information
+
+Technologies Used
+**HTML5**: Structure and layout of the game.
+**CSS3**: Responsive design and styling.
+**JavaScript**: Game logic, score tracking, and Computer play mode implementation.
+**Computer mode Implementation**
+The Computer mode in this Tic-Tac-Toe game uses the Minimax Algorithm in the "Hard" difficulty mode. This algorithm ensures that the AI makes optimal moves to either win or force a draw.
+For the Easy mode, the AI selects a random move. In Medium mode, it mixes optimal and random moves to provide a more human-like challenge.
+
+## Future Improvements  
+Add animations and sound effects for a more engaging experience.  
+Implement online multiplayer mode using web sockets.  
+Add an "Undo Move" feature.  
+Improve Computer performance for large-scale games or alternative grid sizes.  
