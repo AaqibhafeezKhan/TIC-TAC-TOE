@@ -1,29 +1,31 @@
-# TIC-TAC-TOE
- This is a browser-based Tic-Tac-Toe game built using HTML, CSS, and JavaScript. It features both Multiplayer and Computer modes, with the Computer difficulty configurable across three levels: Easy, Medium, and Hard.
+# TIC-TAC-TOE 🎮
 
-## Features  
-**Multiplayer Mode**: Two players can play on the same device.  
-**Computer Mode**: Play against the computer with three difficulty levels:  
-Easy  
-Medium  
-Hard (implemented using the Minimax algorithm)  
-**Score Tracking**: The game tracks wins, losses, and ties for each player.  
-**Responsive Design**: The game is fully responsive and works seamlessly across desktop and mobile devices.  
+A responsive browser-based Tic-Tac-Toe game with multiplayer and intelligent computer opponent modes, built using modern web technologies.
 
-## How to Play
-**Select a Mode**: Choose between Multiplayer or Computer Mode.  
-**Choose Difficulty**: In Computer Mode, select the difficulty level from the dropdown (Easy, Medium, Hard).  
-**Take Turns**: Click on any cell to place your marker. If you're in Computer Mode, the Computer will automatically play its turn after yours.  
-**Track the Score**: Wins, losses, and ties are tracked and displayed below the game board.  
+![Game Preview](https://via.placeholder.com/400x300.png?text=Tic-Tac-Toe+Preview)
 
-## Installation and Setup 
-Clone the Repository:
+## Features ✨
 
-https://github.com/AaqibhafeezKhan/TIC-TAC-TOE.git
+- **Game Modes**
+  - 🕹️ Multiplayer: Local two-player mode
+  - 🤖 Computer Opponent: Play against AI with three difficulty levels
+    - 🟢 Easy: Random moves
+    - 🟡 Medium: Mix of random and smart moves
+    - 🔴 Hard: Unbeatable Minimax algorithm
 
-Navigate to the Folder:
+- **Game Features**
+  - 📊 Score tracking system
+  - ♿ Full accessibility support (ARIA labels, keyboard navigation)
+  - 📱 Responsive mobile-first design
+  - 🎨 Interactive animations and visual feedback
+  - 🔄 One-click game restart
 
-cd TIC-TAC-TOE
+## Installation ⚙️
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/AaqibhafeezKhan/TIC-TAC-TOE.git
+   cd TIC-TAC-TOE
 
 **Open the Game**: Open index.html in any modern browser:
 
