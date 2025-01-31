@@ -2,7 +2,7 @@
 
 A responsive browser-based Tic-Tac-Toe game with multiplayer and intelligent computer opponent modes, built using modern web technologies.
 
-![Game Preview](https://via.placeholder.com/400x300.png?text=Tic-Tac-Toe+Preview)
+![Game Preview](https://aaqibhafeezkhan.github.io/TIC-TAC-TOE/)
 
 ## Features ✨
 
