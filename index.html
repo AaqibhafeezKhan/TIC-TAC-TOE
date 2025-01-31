@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tic-Tac-Toe game by Aaqibhafeez Khan with both multiplayer and AI modes.">
+  <meta name="description" content="Accessible Tic-Tac-Toe game with AI opponent - Play against computer or friend with 3 difficulty levels. Built with modern web technologies.">
   <meta name="author" content="Aaqibhafeez Khan">
-  <title>Tic-Tac-Toe by Aaqibhafeez Khan</title>
+  <title>Tic-Tac-Toe</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭕</text></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,7 +24,7 @@
         <button id="ai-btn" aria-pressed="false">Computer Mode</button>
         <span id="selected-mode" aria-live="polite">Multiplayer Mode</span>
         <div id="difficulty-selection" class="hidden">
-          <label for="difficulty">Select Computer Difficulty:</label>
+          <label for="difficulty">Difficulty:</label>
           <select id="difficulty" aria-label="Select Difficulty Level">
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
@@ -35,27 +36,26 @@
 
     <section aria-labelledby="game-status-section">
       <h2 id="game-status-section" class="visually-hidden">Game Status</h2>
-      <!-- Game status prompt -->
       <div id="game-status" class="game-status" aria-live="polite">Next turn: Player X</div>
     </section>
 
     <section aria-labelledby="game-board-section">
       <h2 id="game-board-section" class="visually-hidden">Game Board</h2>
-      <div class="game-board" role="grid" aria-label="Tic-Tac-Toe game board">
+      <div class="game-board" role="grid" aria-label="Tic-Tac-Toe game board" aria-busy="false">
         <div class="row" role="row">
-          <div class="cell" id="cell-0" role="gridcell" aria-label="Cell 1 of 9" tabindex="0"></div>
-          <div class="cell" id="cell-1" role="gridcell" aria-label="Cell 2 of 9" tabindex="0"></div>
-          <div class="cell" id="cell-2" role="gridcell" aria-label="Cell 3 of 9" tabindex="0"></div>
+          <div class="cell" id="cell-0" role="gridcell" aria-label="Cell 1" tabindex="0"></div>
+          <div class="cell" id="cell-1" role="gridcell" aria-label="Cell 2" tabindex="0"></div>
+          <div class="cell" id="cell-2" role="gridcell" aria-label="Cell 3" tabindex="0"></div>
         </div>
         <div class="row" role="row">
-          <div class="cell" id="cell-3" role="gridcell" aria-label="Cell 4 of 9" tabindex="0"></div>
-          <div class="cell" id="cell-4" role="gridcell" aria-label="Cell 5 of 9" tabindex="0"></div>
-          <div class="cell" id="cell-5" role="gridcell" aria-label="Cell 6 of 9" tabindex="0"></div>
+          <div class="cell" id="cell-3" role="gridcell" aria-label="Cell 4" tabindex="0"></div>
+          <div class="cell" id="cell-4" role="gridcell" aria-label="Cell 5" tabindex="0"></div>
+          <div class="cell" id="cell-5" role="gridcell" aria-label="Cell 6" tabindex="0"></div>
         </div>
         <div class="row" role="row">
-          <div class="cell" id="cell-6" role="gridcell" aria-label="Cell 7 of 9" tabindex="0"></div>
-          <div class="cell" id="cell-7" role="gridcell" aria-label="Cell 8 of 9" tabindex="0"></div>
-          <div class="cell" id="cell-8" role="gridcell" aria-label="Cell 9 of 9" tabindex="0"></div>
+          <div class="cell" id="cell-6" role="gridcell" aria-label="Cell 7" tabindex="0"></div>
+          <div class="cell" id="cell-7" role="gridcell" aria-label="Cell 8" tabindex="0"></div>
+          <div class="cell" id="cell-8" role="gridcell" aria-label="Cell 9" tabindex="0"></div>
         </div>
       </div>
     </section>
@@ -77,7 +77,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2024 Aaqibhafeez Khan</p>
+    <p>&copy; 2025 Aaqibhafeez Khan</p>
   </footer>
 
   <script src="script.js" defer></script>
